@@ -1,3 +1,4 @@
+-- lua-vec2d demo
 vec = require 'vec2d'
 
 print "Welcome vec2d demo:"
@@ -6,5 +7,7 @@ print "Welcome vec2d demo:"
 local v = vec.make(10,10)
 print ("New vector V=("..v.x..','..v.y..')')
 
+-- setting values
+vec.set(v, 15, 20)
+print ("Seting vector V=("..v.x..','..v.y..')')
 
--- setting 
