@@ -10,25 +10,47 @@
 
 local vec = {}
 
---returns a 2d vector table {x,y} =  {xv, yv}
+--returns a new 2d vector table {x,y} =  {xv, yv}
 function vec.make(xv, yv)
   return {x=xv, y=yv}
 end
 
-function vec.set(v, x, y)
-  v.x = x
-  v.y = y
+--returns a new 2d vector table copied from V
+function vec.makeFrom(v)
+  return {x=v.x, y=v.y}
 end
 
---Adds v2 to v1, result in v1
-function vec.addTo(v1, v2)
-  v1.x = v1.x + v2.x
-  v1.y = v1.y + v2.y
+--sets x,y values to vDest
+function vec.set(vDest, x, y)
+  vDest.x = x
+  vDest.y = y
 end
 
-function vec.addManyTo(v1, aTableOfVectors)
-  
+-- Sets vDest x,y from V table x,y values
+function vec.setFrom(vDest, v)
+  vDest.x = v.x
+  vDest.y = v.y
 end
+
+--Adds v to vDest, result in vDest
+function vec.add(vDest, v)
+  vDest.x = vDest.x + v.x
+  vDest.y = vDest.y + v.y
+end
+
+--Sums v1+v2, result in vDest
+function vec.sum(vDest, v1, v2)
+  vDest.x = v1.x + v2.x
+  vDest.y = v1.y + v2.y
+end
+
+-- Sum v1+v2, return a new vector with the sum
+function vec.makeSum(v1, v2)
+  return {x = v1.x + v2.x, 
+          y = v1.y + v2.y }
+end
+
+
   
 
 return vec
