@@ -55,6 +55,78 @@ function vec.sub(vDest, v)
   vDest.x = vDest.x - v.x
   vDest.y = vDest.y - v.y
 end  
-  
+
+-- Scale 
+function vec.scale(vDest, num)
+  vDest.x = vDest.x * num
+  vDest.y = vDest.y * num
+end
+
+-- scale return result
+function vec.makeScale(v, num)
+  return { x = v.x * num,
+           y = v.y * num }
+end
+
+--for 2D vectors cross product x,y=0,0 the function return only the value of Z
+function vec.crossProd(v1, v2)
+  return (v1.x* v2.y- v1.y* v2.x)
+end
+
+--returns number
+function vec.dotProd(v1, v2)  
+  return (v1.x* v2.x+ v1.y* v2.y)
+end
+
+--multiply
+function vec.multiply(vDest, v)
+  vDest.x = vDest.x * v.x
+  vDest.y = vDest.y * v.y
+end
+
+--make multiplied 
+function vec.makeMultiply(v1, v2) 
+  return {v1.x*v2.x, v1.y*v2.y}
+end
+
+--module, return vector length
+function vec.length(v)
+  return math.sqrt(v.x^2 + v.y^2) 
+end
+
+--vector length without sqrt
+function vec.sqLength(v)
+  return (v.x^2 + v.y^2) 
+end
+
+--normalizing vDest
+function vec.normalize(vDest)
+  local tmp = 1 / vec.length(vDest)
+  vDest.x = vDest.x * tmp
+  vDest.y = vDest.y * tmp
+end
+
+--returns new normalized vector from V
+function vec.makeNormalized(v)
+  local tmp = 1 / vec.length(v)
+  return {
+            v.x * tmp,
+            v.y * tmp  
+          }
+end
+
+--rotate vDist angle radiants
+function vec.rotate(vDist, angle)
+    vDist.x = vDist.x * math.cos(angle) - vDist.y * math.sin(angle);
+    vDist.y = vDist.x * math.sin(angle) + vDist.y * math.cos(angle);    
+end
+
+--rotate V then return result
+function vec.makeRotated(v, angle)
+    return {
+      v.x * math.cos(angle) - v.y * math.sin(angle),
+      v.x * math.sin(angle) + v.y * math.cos(angle)    
+    }
+end
 
 return vec

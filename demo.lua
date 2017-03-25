@@ -25,4 +25,8 @@ print ("Sum of V+V2 is V3=("..v3.x..','..v3.y..')')
 local v4 = vec.makeFrom(v3)
 print ("Copying V3 as V4=("..v4.x..','..v4.y..')')
 
---
+--substract
+vec.sub(v4, v2)
+print ("Substracting v2 to V4=("..v4.x..','..v4.y..')')
+print ("Is still tthe same? V3=("..v3.x..','..v3.y..')')
+
