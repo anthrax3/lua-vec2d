@@ -34,3 +34,32 @@ print ("Is still the same? V3=("..v3.x..','..v3.y..')')
 vec.scale(v3, 2.5)
 print("Scaling by 2.5 V3=("..v3.x..','..v3.y..')')
 
+--make scaling
+local v5 = vec.makeScale(v3, 0.5 )
+print("From V3 scaling down 0.5 new vec V5=("..v5.x..','..v5.y..')')
+
+local z = vec.crossProd(v4, v3)
+print ('Cross product v4 X v3 in 2D, Z='..z..')')
+
+--multiply
+vec.multiply(v5, v4)
+print("Multiply v5 by v4, V5=("..v5.x..','..v5.y..')')
+
+--dotproduct
+print("Dot product v5 by v4  = "..vec.dotProd(v5, v4)..'')
+
+--length
+print("Vector length v5 = "..vec.length(v5)..'')
+--length
+print("While Vector Sqlength v5 = "..vec.sqLength(v5)..'')
+
+--normalizing
+vec.normalize(v5)
+print("Normalized V5=("..v5.x..','..v5.y..')')
+print('New length V5='..vec.length(v5)..')')
+
+--rotation
+--TODO: test this visually 
+vec.rotate(v5, 3.14/2 )
+print("Rotate Pi/2 V5=("..v5.x..','..v5.y..')')
+

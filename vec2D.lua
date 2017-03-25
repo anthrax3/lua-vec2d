@@ -129,4 +129,10 @@ function vec.makeRotated(v, angle)
     }
 end
 
+function vec.makeFromAngle( ang )
+  return {
+    
+  }  
+end
+
 return vec
