@@ -28,5 +28,9 @@ print ("Copying V3 as V4=("..v4.x..','..v4.y..')')
 --substract
 vec.sub(v4, v2)
 print ("Substracting v2 to V4=("..v4.x..','..v4.y..')')
-print ("Is still tthe same? V3=("..v3.x..','..v3.y..')')
+print ("Is still the same? V3=("..v3.x..','..v3.y..')')
+
+--scale
+vec.scale(v3, 2.5)
+print("Scaling by 2.5 V3=("..v3.x..','..v3.y..')')
 
