@@ -50,7 +50,11 @@ function vec.makeSum(v1, v2)
           y = v1.y + v2.y }
 end
 
-
+-- substract V from vDest
+function vec.sub(vDest, v) 
+  vDest.x = vDest.x - v.x
+  vDest.y = vDest.y - v.y
+end  
   
 
 return vec

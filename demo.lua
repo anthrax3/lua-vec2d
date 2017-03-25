@@ -17,3 +17,12 @@ print ("New vector V2=("..v2.x..','..v2.y..')')
 vec.add(v, v2)
 print ("Adding V2, V=("..v.x..','..v.y..')')
 
+--making a new vector from V+V2
+local v3 = vec.makeSum(v, v2)
+print ("Sum of V+V2 is V3=("..v3.x..','..v3.y..')')
+
+--new vector clone
+local v4 = vec.makeFrom(v3)
+print ("Copying V3 as V4=("..v4.x..','..v4.y..')')
+
+--
