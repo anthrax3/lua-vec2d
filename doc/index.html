@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><strong>vec2d.lua</strong></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>vec2d.lua</code></h1>
+<p>2D vector library
+ Intended to work with any table that contains x,y component.</p>
+<p>
+ Be efficient, simple and fast, accept tables as parameters, avoid unnecessary validations.
+ Assumptions on this Doc:
+ -Every time "vector" refer to any table with {x,y} components. A 2D vector.</p>
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example">vec = require(&apos;vec2d&apos;)
+</pre></li>
+        <li><pre class="example">v={x=10,y=15}
+vec.add(v, vec.makeFromAngle(math.pi/6))
+vec.normalize(v)
+vec.rotate(v, math.pi/4)
+</pre></li>
+    </ul>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>License</strong>: MIT</li>
+        <li><strong>Author</strong>: Denys Almaral (denysalmaral.com)</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#vec.makeFrom">vec.makeFrom (v)</a></td>
+	<td class="summary">Returns a new vector by copy</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.set">vec.set (vDest, x, y)</a></td>
+	<td class="summary">Sets x,y values to vDest vector</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.setFrom">vec.setFrom (vDest, v)</a></td>
+	<td class="summary">Copy vector v to vDest</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.add">vec.add (vDest, v)</a></td>
+	<td class="summary">Adds v to vDest, result in vDest</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.sum">vec.sum (vDest, v1, v2)</a></td>
+	<td class="summary">Sums v1+v2, result in vDest</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.makeSum">vec.makeSum (v1, v2)</a></td>
+	<td class="summary">Sum v1+v2, return a new vector with the sum</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.sub">vec.sub (vDest, v)</a></td>
+	<td class="summary">Substract V from vDest, result in vDest</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.makeSub">vec.makeSub (v1, v2)</a></td>
+	<td class="summary">Returns new vector = (v1-v2)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.scale">vec.scale (vDest, num)</a></td>
+	<td class="summary">Scale vDest multiplying by num number</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.makeScale">vec.makeScale (v, num)</a></td>
+	<td class="summary">Returns a new vector from V*m; where V is vector and m is a number</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.crossProd">vec.crossProd (v1, v2)</a></td>
+	<td class="summary">Returns only Z float value from vector cross product v1 X v2</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.dotProd">vec.dotProd (v1, v2)</a></td>
+	<td class="summary">returns number vectors dot product v1 * v2</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.multiply">vec.multiply (vDest, v)</a></td>
+	<td class="summary">Multiply vDist by v, result in vDist</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.makeMultiply">vec.makeMultiply (v1, v2)</a></td>
+	<td class="summary">Returns new vector multiplied v1*v2</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.length">vec.length (v)</a></td>
+	<td class="summary">Returns vector length float</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.sqLength">vec.sqLength (v)</a></td>
+	<td class="summary">Returns sqr( vec.length(v) ) float</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.normalize">vec.normalize (vDest)</a></td>
+	<td class="summary">Normalizing vDest vector</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.makeNormalized">vec.makeNormalized (v)</a></td>
+	<td class="summary">Returns new normalized vector from V</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.rotate">vec.rotate (vDest, angle)</a></td>
+	<td class="summary">Rotate vDist vector, given float angle in radiants</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.makeRotated">vec.makeRotated (v, angle)</a></td>
+	<td class="summary">Returns new vector from V rotated by float angle</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#vec.makeFromAngle">vec.makeFromAngle (angle)</a></td>
+	<td class="summary">Returns a normalized vector with float angle in radians</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "vec.makeFrom"></a>
+    <strong>vec.makeFrom (v)</strong>
+    </dt>
+    <dd>
+    Returns a new vector by copy
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+         Vector
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        a new vector cloned
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.set"></a>
+    <strong>vec.set (vDest, x, y)</strong>
+    </dt>
+    <dd>
+    Sets x,y values to vDest vector
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">vDest</span>
+
+        </li>
+        <li><span class="parameter">x</span>
+
+        </li>
+        <li><span class="parameter">y</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.setFrom"></a>
+    <strong>vec.setFrom (vDest, v)</strong>
+    </dt>
+    <dd>
+    Copy vector v to vDest
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">vDest</span>
+
+        </li>
+        <li><span class="parameter">v</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.add"></a>
+    <strong>vec.add (vDest, v)</strong>
+    </dt>
+    <dd>
+    Adds v to vDest, result in vDest
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">vDest</span>
+
+        </li>
+        <li><span class="parameter">v</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.sum"></a>
+    <strong>vec.sum (vDest, v1, v2)</strong>
+    </dt>
+    <dd>
+    Sums v1+v2, result in vDest
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">vDest</span>
+
+        </li>
+        <li><span class="parameter">v1</span>
+
+        </li>
+        <li><span class="parameter">v2</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.makeSum"></a>
+    <strong>vec.makeSum (v1, v2)</strong>
+    </dt>
+    <dd>
+    Sum v1+v2, return a new vector with the sum
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v1</span>
+
+        </li>
+        <li><span class="parameter">v2</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.sub"></a>
+    <strong>vec.sub (vDest, v)</strong>
+    </dt>
+    <dd>
+    Substract V from vDest, result in vDest
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">vDest</span>
+
+        </li>
+        <li><span class="parameter">v</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.makeSub"></a>
+    <strong>vec.makeSub (v1, v2)</strong>
+    </dt>
+    <dd>
+    Returns new vector = (v1-v2)
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v1</span>
+
+        </li>
+        <li><span class="parameter">v2</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.scale"></a>
+    <strong>vec.scale (vDest, num)</strong>
+    </dt>
+    <dd>
+    Scale vDest multiplying by num number
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">vDest</span>
+
+        </li>
+        <li><span class="parameter">num</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.makeScale"></a>
+    <strong>vec.makeScale (v, num)</strong>
+    </dt>
+    <dd>
+    Returns a new vector from V*m; where V is vector and m is a number
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+
+        </li>
+        <li><span class="parameter">num</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.crossProd"></a>
+    <strong>vec.crossProd (v1, v2)</strong>
+    </dt>
+    <dd>
+    Returns only Z float value from vector cross product v1 X v2
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v1</span>
+
+        </li>
+        <li><span class="parameter">v2</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.dotProd"></a>
+    <strong>vec.dotProd (v1, v2)</strong>
+    </dt>
+    <dd>
+    returns number vectors dot product v1 * v2
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v1</span>
+
+        </li>
+        <li><span class="parameter">v2</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.multiply"></a>
+    <strong>vec.multiply (vDest, v)</strong>
+    </dt>
+    <dd>
+    Multiply vDist by v, result in vDist
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">vDest</span>
+
+        </li>
+        <li><span class="parameter">v</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.makeMultiply"></a>
+    <strong>vec.makeMultiply (v1, v2)</strong>
+    </dt>
+    <dd>
+    Returns new vector multiplied v1*v2
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v1</span>
+
+        </li>
+        <li><span class="parameter">v2</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.length"></a>
+    <strong>vec.length (v)</strong>
+    </dt>
+    <dd>
+    Returns vector length float
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.sqLength"></a>
+    <strong>vec.sqLength (v)</strong>
+    </dt>
+    <dd>
+    Returns sqr( vec.length(v) ) float
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.normalize"></a>
+    <strong>vec.normalize (vDest)</strong>
+    </dt>
+    <dd>
+    Normalizing vDest vector
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">vDest</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.makeNormalized"></a>
+    <strong>vec.makeNormalized (v)</strong>
+    </dt>
+    <dd>
+    Returns new normalized vector from V
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.rotate"></a>
+    <strong>vec.rotate (vDest, angle)</strong>
+    </dt>
+    <dd>
+    Rotate vDist vector, given float angle in radiants
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">vDest</span>
+
+        </li>
+        <li><span class="parameter">angle</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.makeRotated"></a>
+    <strong>vec.makeRotated (v, angle)</strong>
+    </dt>
+    <dd>
+    Returns new vector from V rotated by float angle
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+
+        </li>
+        <li><span class="parameter">angle</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "vec.makeFromAngle"></a>
+    <strong>vec.makeFromAngle (angle)</strong>
+    </dt>
+    <dd>
+    Returns a normalized vector with float angle in radians
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">angle</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2017-03-25 17:47:20 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

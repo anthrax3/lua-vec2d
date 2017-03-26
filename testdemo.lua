@@ -4,7 +4,7 @@ vec = require 'vec2d'
 print "Welcome vec2d demo:"
 
 -- creating a 2d vector
-local v = vec.make(10,10)
+local v = {x=10,y=10}
 print ("New vector V=("..v.x..','..v.y..')')
 
 -- setting values
@@ -12,7 +12,7 @@ vec.set(v, 15, 20)
 print ("Seting vector V=("..v.x..','..v.y..')')
 
 -- adding
-local v2 = vec.make(1,1)
+local v2 = {x=1,y=1}
 print ("New vector V2=("..v2.x..','..v2.y..')')
 vec.add(v, v2)
 print ("Adding V2, V=("..v.x..','..v.y..')')
@@ -59,7 +59,9 @@ print("Normalized V5=("..v5.x..','..v5.y..')')
 print('New length V5='..vec.length(v5)..')')
 
 --rotation
---TODO: test this visually 
-vec.rotate(v5, 3.14/2 )
+--TODO: test these rotations visually 
+vec.rotate(v5, math.pi/2 )
 print("Rotate Pi/2 V5=("..v5.x..','..v5.y..')')
 
+local v6 = vec.makeFromAngle( math.pi/4 )
+print("Unitary vector with angle Pi/4 V6=("..v6.x..','..v6.y..')')
